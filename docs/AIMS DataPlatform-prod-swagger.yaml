@@ -1,0 +1,280 @@
+---
+swagger: "2.0"
+info:
+  version: "2019-08-14T05:08:24Z"
+  title: "AIMS DataPlatform"
+host: "api.aims.gov.au"
+basePath: "/data"
+schemes:
+- "https"
+paths:
+  /v1.0/10.25845/5b4eb0f9bb848/data:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "min-longitude"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "max-longitude"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "site-name"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "thru-date"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "max-latitude"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "min-latitude"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "from-date"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "size"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ResponseWithCitation"
+  /v1.0/10.25845/5b4eb0f9bb848/sites:
+    get:
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ListOfSitesInResults"
+  /v1.0/10.25845/5c09bf93f315d/data:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "min-longitude"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "max-longitude"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "series"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "site-name"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "thru-date"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "max-latitude"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "min-latitude"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "parameter"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "from-date"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "size"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/WeatherResponseWithCitation"
+  /v1.0/10.25845/5c09bf93f315d/parameters:
+    get:
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ListOfParamters"
+  /v1.0/10.25845/5c09bf93f315d/series:
+    get:
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ListOfSeries"
+  /v1.0/10.25845/5c09bf93f315d/sites:
+    get:
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ListOfSites"
+definitions:
+  WeatherResponseWithCitation:
+    type: "object"
+    properties:
+      citation:
+        type: "string"
+        description: "Academic citation for the data"
+      metadata:
+        type: "string"
+        description: "Metadata such as URL"
+      links:
+        type: "array"
+        description: "Links associated with data set"
+        items:
+          type: "string"
+          description: "Link associated with data set"
+      results:
+        type: "array"
+        description: "The returned data"
+        items:
+          type: "object"
+          properties:
+            deployment_id:
+              type: "number"
+              description: "Deployment ID"
+            site_name:
+              type: "string"
+              description: "The Site where measurement was taken"
+            location_name:
+              type: "string"
+              description: "The location ID where measurement was taken"
+            depth:
+              type: "number"
+              description: "The depth as which measurement was taken"
+            latitude:
+              type: "number"
+              description: "Latitude of measurement"
+            longitude:
+              type: "number"
+              description: "Longitude of measurement"
+            parameter:
+              type: "string"
+              description: "Measurement Type"
+            serial_num:
+              type: "string"
+              description: "Serial number"
+            data_id:
+              type: "number"
+              description: "Data ID"
+            time:
+              type: "string"
+              description: "Time of measurement"
+            raw_value:
+              type: "number"
+              description: "Measured value"
+            qc_value:
+              type: "number"
+              description: "Measured value"
+            series_id:
+              type: "number"
+              description: "Series ID"
+            series_name:
+              type: "string"
+              description: "The name of series"
+    title: "Response with Citation"
+  ListOfSeries:
+    title: "List of Series"
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        series_id:
+          type: "number"
+          description: "Series ID"
+        series_name:
+          type: "string"
+          description: "Series name"
+  ListOfParamters:
+    title: "List of Parameters"
+    type: "array"
+    items:
+      type: "string"
+      description: "The parameter name"
+  ListOfSitesInResults:
+    type: "object"
+    properties:
+      results:
+        type: "array"
+        description: "The returned list of sites"
+        items:
+          type: "string"
+          description: "The site name"
+    title: "List of Sites"
+  ResponseWithCitation:
+    type: "object"
+    properties:
+      citation:
+        type: "string"
+        description: "Academic citation for the data"
+      metadata:
+        type: "string"
+        description: "Metadata such as URL"
+      results:
+        type: "array"
+        description: "The returned data"
+        items:
+          type: "object"
+          properties:
+            site_name:
+              type: "string"
+              description: "The Site where measurement was taken"
+            location_name:
+              type: "string"
+              description: "The location ID where measurement was taken"
+            depth:
+              type: "number"
+              description: "The depth as which measurement was taken"
+            latitude:
+              type: "number"
+              description: "Latitude of measurement"
+            longitude:
+              type: "number"
+              description: "Longitude of measurement"
+            time:
+              type: "string"
+              description: "Time of measurement"
+            serial_num:
+              type: "number"
+              description: "Serial number"
+            parameter:
+              type: "string"
+              description: "Measurement Type"
+            value:
+              type: "number"
+              description: "Measured value"
+    title: "Response with Citation"
+  ListOfSites:
+    title: "List of Sites"
+    type: "array"
+    items:
+      type: "string"
+      description: "The site name"
