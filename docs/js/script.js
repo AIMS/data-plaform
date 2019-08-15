@@ -4,9 +4,9 @@
 function populateSeries(data) {
   console.log(data);
   $("#series").append("<h4>Series</h4>");
-  $("#series").append("<table><tr><th>Series ID</th><th>Series Name</th></tr>")
-  data.forEach((series) => $("#series").append("<tr><td>" + series.series_id + "</td><td>" + series.series_name + "</td></tr>"));
-  $("#series").append("</table>");
+  $("#series").append('<table><tbody id="seriesTableBody"><tr><th>Series ID</th><th>Series Name</th></tr></tbody></table>')
+  data.forEach((series) => $("#seriesTableBody").append("<tr><td>" + series.series_id + "</td><td>" + series.series_name + "</td></tr>"));
+  // $("#series").append("</table>");
 }
 
 function populateSites(data) { populate("Sites", "sites", data); }
