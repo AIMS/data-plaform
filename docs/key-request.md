@@ -3,10 +3,10 @@ AIMS DataPlatform Key Request
 
 Fill out the following form and click "Submit" to have an __AIMS DataPlatform API__ key emailed to you.
 
-<label>Name <input id="name" name="name" type="text"></label>
-<br/>
-<label>Email <input id="email" type="text" name="email"></label>
-<br/>
+<label>Name <input id="name" name="name" type="text"></label><br/>
+
+<label>Email <input id="email" type="text" name="email"></label><br/>
+
 <label> Purpose
     <select name="purpose" id="purpose">
         <option value="research">Research</option>
@@ -15,9 +15,11 @@ Fill out the following form and click "Submit" to have an __AIMS DataPlatform AP
         <option value="general">General</option>
         <option value="other">Other</option>
     </select>
-</label>
-<label>Detail <input id="purpose" type="text" name="comments"></label>
-<input value="Submit" onclick="processRequest();">
+</label><br/>
+
+<label>Comments <input id="comments" type="text" name="comments"></label><br/>
+
+<input value="Submit" onclick="processRequest();"></br>
 
 <p id="success" style="display: none;">Your request was submitted, please check your email.</p>
 <p id="fail" style="display: none;">Your request was not submitted, please try again later or report an error to .....</p>
@@ -33,18 +35,26 @@ function processRequest() {
     var downloadUrl = "http://something/somewhere";    
     console.log(name, email, purpose, comments);
     
-    $.post("https://api.aims.gov.au/download/key",
-        {
-            "name": name,
-            "email": email,
-            "purpose": purpose,
-            "comments": comments,
-            "download-url": downloadUrl
-        },
-        function(err) {
-            console.log("Received:", err);
-            $("#keyRequest").hide();
-            $("#success").show();
-        });
+    $.ajax({
+        url: "https://api.aims.gov.au/download/key",
+        data:
+            {
+                "name": name,
+                "email": email,
+                "purpose": purpose,
+                "comments": comments,
+                "download-url": downloadUrl
+            },
+        success:
+            function(result) {
+                console.log("Success:", result);
+                $("#keyRequest").hide();
+                $("#success").show();
+            },
+        error:
+            function(xhr,status,error) {
+            }
+         }
+    );
 }
 </script>
