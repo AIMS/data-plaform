@@ -38,6 +38,7 @@ function processRequest() {
     $.ajax({
         url: "https://api.aims.gov.au/download/key",
         method: "POST",
+        contentType: "application/json",
         data:
             {
                 "name": name,
