@@ -20,6 +20,7 @@ Examples usage of data request using query filter parameters with [R client](htt
 
 ```
 
-library(aimsdataplatform)
+> library(aimsdataplatform)
+> getData(aimsTemperatureLoggers, filters=list('site'='Bickerton Island', 'size'=100, 'from-date'='2018-01-01', 'thru-date'='2018-01-07'))
 
 ```
