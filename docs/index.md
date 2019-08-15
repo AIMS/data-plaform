@@ -13,4 +13,4 @@ Data Set                 | DOI                    | Documentation               
 AIMS Weather             | 10.25845/5c09bf93f315d | [AIMS Weather](weather)                         | [AIMS Weather](https://doi.org/10.25845/5c09bf93f315d){:target="_blank"}
 AIMS Temperature Loggers | 10.25845/5b4eb0f9bb848 | [AIMS Temperature Loggers](temperature-loggers) | [AIMS Temperature Loggers](https://doi.org/10.25845/5b4eb0f9bb848){:target="_blank"}
 
-Check swagger [here](swagger)
+Swagger documentation is available [here](swagger).
