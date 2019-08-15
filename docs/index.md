@@ -13,4 +13,17 @@ Data Set                 | DOI                    | Documentation               
 AIMS Weather             | 10.25845/5c09bf93f315d | [AIMS Weather](weather)                         | [AIMS Weather](https://doi.org/10.25845/5c09bf93f315d){:target="_blank"}
 AIMS Temperature Loggers | 10.25845/5b4eb0f9bb848 | [AIMS Temperature Loggers](temperature-loggers) | [AIMS Temperature Loggers](https://doi.org/10.25845/5b4eb0f9bb848){:target="_blank"}
 
-Swagger documentation is available [here](swagger).
+Available Clients
+-----------------
+
+At this time there is only one client
+
+Platform | Client
+---------|--------------------------------------------------------------------
+R        | [AIMS DataPlatform R Client](http://aims.github.io/data-platform-r)
+
+Documentation
+-------------
+
+Detailed information about the __AIMS DataPlatform API__ urls and formats can be found in the Swagger documentation available [here](swagger).
+                                                                                 

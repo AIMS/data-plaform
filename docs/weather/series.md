@@ -1,3 +1,4 @@
+[Home](../index) | [Weather](index)
 
 List of Series ID and Name
 ==========================

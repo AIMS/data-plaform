@@ -1,3 +1,4 @@
+[Home](../index) | [Temperature Loggers](index)
 
 List of Temperature Logger Sites
 ================================
