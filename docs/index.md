@@ -16,7 +16,7 @@ AIMS Temperature Loggers | 10.25845/5b4eb0f9bb848 | [AIMS Temperature Loggers](t
 Available Clients
 -----------------
 
-At this time there is only one client
+At this time there is only one client specifically made for __AIMS DataPlatform API__ however any *REST* client will work.
 
 Platform | Client
 ---------|--------------------------------------------------------------------
