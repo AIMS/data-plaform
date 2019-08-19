@@ -19,3 +19,29 @@ function populate(title, divId, data) {
   data.forEach(item => $("#" + divId).append("<p>" + item + "</p>"));
 }
 
+function newAPIKey(name, email, purpose, comments) {
+  console.log(name, email, purpose, comments);
+  var data = { "name": name, "email": email, "purpose": purpose, "comments": comments }
+
+  $.ajax({
+        url: url,
+        method: "POST",
+        contentType: "application/json",
+        crossDomain: true,
+        data: data,
+        success:
+            function(result) {
+              console.log("Success:", result);
+              $("#keyRequest").hide();
+              $("#success").val("Your request was submitted, please check your email.  Your new API Key is " + result.apiKey);
+              $("#success").show();
+
+            },
+        error:
+            function(xhr,status,error) {
+              console.log(xhr, status, error);
+            }
+      }
+  );
+
+}
