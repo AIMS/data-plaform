@@ -1,12 +1,13 @@
 AIMS DataPlatform Key Request
 =============================
 
-Fill out the following form and click "Submit" to have an __AIMS DataPlatform API__ key emailed to you.
 
 <div id="keyRequest">
-<label>Name <input id="name" name="name" type="text"></label><br/>
+<p>Fill out the following form and click "Submit" to have an <strong>AIMS DataPlatform</strong> API key emailed to you.</p>
 
-<label>Email <input id="email" type="text" name="email"></label><br/>
+<label>Name <input id="name" name="name" type="text"></label><br/><br/>
+
+<label>Email <input id="email" type="text" name="email"></label><br/><br/>
 
 <label> Purpose
     <select name="purpose" id="purpose">
@@ -16,11 +17,11 @@ Fill out the following form and click "Submit" to have an __AIMS DataPlatform AP
         <option value="general">General</option>
         <option value="other">Other</option>
     </select>
-</label><br/>
+</label><br/><br/>
 
-<label>Comments <input id="comments" type="text" name="comments"></label><br/>
+<label>Comments <input id="comments" type="text" name="comments"></label><br/><br/>
 
-<input value="Submit" onclick="processRequest();"></br>
+<input value="Submit" onclick="processRequest();"><br/><br/>
 </div>
 
 <div id="result">
