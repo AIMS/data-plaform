@@ -5,21 +5,23 @@ AIMS DataPlatform Key Request
 <div id="keyRequest">
 <p>Fill out the following form and click "Submit" to have an <strong>AIMS DataPlatform</strong> API key emailed to you.</p>
 
-<label>Name <input id="name" name="name" type="text"></label><br/><br/>
+<label>Name</label><br/>
+<input id="name" name="name" type="text"><br/><br/>
 
-<label>Email <input id="email" type="text" name="email"></label><br/><br/>
+<label>Email</label><br>
+<input id="email" type="text" name="email"><br/><br/>
 
-<label> Purpose
-    <select name="purpose" id="purpose">
-        <option value="research">Research</option>
-        <option value="education">Education</option>
-        <option value="commercial">Commercial</option>
-        <option value="general">General</option>
-        <option value="other">Other</option>
-    </select>
-</label><br/><br/>
+<label>Purpose</label><br/>
+<select name="purpose" id="purpose">
+    <option value="research">Research</option>
+    <option value="education">Education</option>
+    <option value="commercial">Commercial</option>
+    <option value="general">General</option>
+    <option value="other">Other</option>
+</select><br/><br/>
 
-<label>Comments <textarea id="comments" name="comments"></textarea></label><br/><br/>
+<label>Comments</label><br/>
+<textarea id="comments" name="comments"></textarea><br/><br/>
 
 <input value="Submit" style="text-align: center;" onclick="processRequest();"><br/><br/>
 </div>
