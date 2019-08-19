@@ -39,6 +39,7 @@ AIMS DataPlatform Key Request
     //var url = "https://api.aims.gov.au/data/key";
 
     function processRequest() {
+        disableForm();
         var spinner = new Spinner().spin();
         $("#spinner").append(spinner.el);
 
@@ -79,5 +80,13 @@ AIMS DataPlatform Key Request
             }
         );
 
+    }
+    
+    function disableForm() {
+        $("#name").prop('disabled',true);
+        $("#email").prop('disabled',true);
+        $("#purpose").prop('disabled',true);
+        $("#comments").prop('disabled',true);
+        $("#submitButton").prop('disabled',true);
     }
 </script>
