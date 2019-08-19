@@ -23,11 +23,15 @@ AIMS DataPlatform Key Request
 <label>Comments</label><br/>
 <textarea id="comments" name="comments"></textarea><br/><br/>
 
-<input value="Submit" style="text-align: center;" onclick="processRequest();"><br/><br/>
+<div id="spinner" style="position: relative;">
+    <input id="submitButton" type="button" value="Submit" onclick="processRequest();"></br>
+</div>
+
 </div>
 
 <div id="result"></div>
 
+<script src="docs/js/spin.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 
@@ -35,6 +39,9 @@ AIMS DataPlatform Key Request
     //var url = "https://api.aims.gov.au/data/key";
 
     function processRequest() {
+        var spinner = new Spinner().spin();
+        $("#spinner").append(spinner.el);
+
         var name = $("#name").val();
         var email = $("#email").val();
         var purpose = $("#purpose").val();
@@ -51,6 +58,7 @@ AIMS DataPlatform Key Request
                 success:
                     function(result) {
                         //console.log("Success:", result);
+                        spinner.stop();
                         $("#keyRequest").hide();
                         if (result.apiKey) {
                             $("#result").append("<p>Your request was submitted, please check your email.</p>");
@@ -63,6 +71,7 @@ AIMS DataPlatform Key Request
                 error:
                     function(xhr,status,error) {
                         //console.log(xhr, status, error);
+                        spinner.stop();
                         $("#keyRequest").hide();
                         $("#result").append("<p>The request did not succeed, please try again later</p>");
                         $("#result").show();
