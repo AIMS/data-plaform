@@ -26,10 +26,7 @@ AIMS DataPlatform Key Request
 <input value="Submit" style="text-align: center;" onclick="processRequest();"><br/><br/>
 </div>
 
-<div id="result">
-    <p id="success" style="display: none;">Your request was submitted, please check your email.</p>
-    <p id="fail" style="display: none;">Your request was not submitted, please try again later or report an error to .....</p>
-</div>
+<div id="result"></div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
