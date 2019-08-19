@@ -19,9 +19,9 @@ AIMS DataPlatform Key Request
     </select>
 </label><br/><br/>
 
-<label>Comments <input id="comments" type="text" name="comments"></label><br/><br/>
+<label>Comments <textarea id="comments" name="comments"></textarea></label><br/><br/>
 
-<input value="Submit" onclick="processRequest();"><br/><br/>
+<input value="Submit" style="text-align: center;" onclick="processRequest();"><br/><br/>
 </div>
 
 <div id="result">
