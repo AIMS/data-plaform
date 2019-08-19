@@ -1,6 +1,6 @@
 AIMS DataPlatform Key Request
 =============================
-
+[Back](index)
 
 <div id="keyRequest">
 <p>Fill out the following form and click "Submit" to have an <strong>AIMS DataPlatform</strong> API key emailed to you.</p>
@@ -39,7 +39,7 @@ AIMS DataPlatform Key Request
         var email = $("#email").val();
         var purpose = $("#purpose").val();
         var comments = $("#comments").val();
-        console.log(name, email, purpose, comments);
+        //console.log(name, email, purpose, comments);
         var data = { "name": name, "email": email, "purpose": purpose, "comments": comments }
 
             $.ajax({
@@ -47,12 +47,10 @@ AIMS DataPlatform Key Request
                 method: "POST",
                 contentType: "application/json",
                 crossDomain: true,
-                // processData: false,
-                // dataType: 'json',
                 data: JSON.stringify(data),
                 success:
                     function(result) {
-                        console.log("Success:", result);
+                        //console.log("Success:", result);
                         $("#keyRequest").hide();
                         if (result.apiKey) {
                             $("#result").append("<p>Your request was submitted, please check your email.</p><p>Your new API Key is " + result.apiKey + "</p>");
@@ -64,7 +62,7 @@ AIMS DataPlatform Key Request
                     },
                 error:
                     function(xhr,status,error) {
-                        console.log(xhr, status, error);
+                        //console.log(xhr, status, error);
                         $("#keyRequest").hide();
                         $("#result").append("<p>The request did not succeed, please try again later</p>");
                         $("#result").show();
