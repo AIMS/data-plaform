@@ -24,14 +24,14 @@ AIMS DataPlatform Key Request
 <textarea id="comments" name="comments"></textarea><br/><br/>
 
 <div id="spinner" style="position: relative;">
-    <input id="submitButton" type="button" value="Submit" onclick="processRequest();"></br>
+    <input id="submitButton" type="button" value="Submit" onclick="processRequest();"><br/>
 </div>
 
 </div>
 
 <div id="result"></div>
 
-<script src="docs/js/spin.min.js"></script>
+<script src="js/spin.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 
