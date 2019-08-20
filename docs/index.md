@@ -22,6 +22,17 @@ Platform | Client
 ---------|--------------------------------------------------------------------
 R        | [AIMS DataPlatform R Client](http://aims.github.io/data-platform-r)
 
+
+AIMS DataPlatform API Key
+-------------------------
+__AIMS DataPlatform API__ requires an *API Key* for requests to succeed.  The *API Key* should be added to every `HTTP` request as an `X-Api-Key` header, keys can be obtained from the [key request page](key-request).
+
+Example of the `X-ApiKey` header using curl:
+
+```
+curl -H "x-api-key: xxxxx" https://api.aims.gov.au/data/v1.0/10.25845/5c09bf93f315d/sites
+```
+
 Documentation
 -------------
 
