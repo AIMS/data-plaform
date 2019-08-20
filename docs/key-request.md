@@ -61,11 +61,11 @@ AIMS DataPlatform Key Request
                         //console.log("Success:", result);
                         spinner.stop();
                         $("#keyRequest").hide();
-                        if (result.apiKey) {
+                        if (result.newApiKey) {
                             $("#result").append("<p>Your request was submitted, please check your email.</p>");
                             $("#result").show();
                         } else {
-                            $("#result").append("<p>A pre-existing API key was found for " + result.email + "</p>");
+                            $("#result").append("<p>A pre-existing API key was found, please check your email."</p>");
                             $("#result").show();
                         }
                     },
