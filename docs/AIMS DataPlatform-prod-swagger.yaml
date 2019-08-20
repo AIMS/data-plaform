@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2019-08-14T05:08:24Z"
+  version: "2019-08-20T05:20:22Z"
   title: "AIMS DataPlatform"
 host: "api.aims.gov.au"
 basePath: "/data"
@@ -20,6 +20,10 @@ paths:
       - name: "max-longitude"
         in: "query"
         required: false
+        type: "string"
+      - name: "X-Api-Key"
+        in: "header"
+        required: true
         type: "string"
       - name: "site-name"
         in: "query"
@@ -50,6 +54,8 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/ResponseWithCitation"
+      security:
+      - api_key: []
   /v1.0/10.25845/5b4eb0f9bb848/sites:
     get:
       produces:
@@ -71,6 +77,10 @@ paths:
       - name: "max-longitude"
         in: "query"
         required: false
+        type: "string"
+      - name: "X-Api-Key"
+        in: "header"
+        required: true
         type: "string"
       - name: "series"
         in: "query"
@@ -109,6 +119,8 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/WeatherResponseWithCitation"
+      security:
+      - api_key: []
   /v1.0/10.25845/5c09bf93f315d/parameters:
     get:
       produces:
@@ -136,6 +148,40 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/ListOfSites"
+  /v1.0/key:
+    post:
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "x-api-key"
+    in: "header"
 definitions:
   WeatherResponseWithCitation:
     type: "object"
@@ -201,6 +247,9 @@ definitions:
               type: "string"
               description: "The name of series"
     title: "Response with Citation"
+  Empty:
+    type: "object"
+    title: "Empty Schema"
   ListOfSeries:
     title: "List of Series"
     type: "array"
