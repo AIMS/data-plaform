@@ -30,7 +30,7 @@ __AIMS DataPlatform API__ requires an *API Key* for requests to succeed.  The *A
 Example of the `X-ApiKey` header using curl:
 
 ```
-curl -H "x-api-key: xxxxx" https://api.aims.gov.au/data/v1.0/10.25845/5c09bf93f315d/sites
+curl -H "x-api-key: xxxxx" "https://api.aims.gov.au/data/v1.0/10.25845/5c09bf93f315d/data?site-name=Davies%20Reef&size=10"
 ```
 
 Documentation
