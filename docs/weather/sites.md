@@ -5,7 +5,7 @@ List of Sites
 
 The list of sites is:
 
-<div id="spinner"></div>
+<div id="spinner" style="position: relative;"></div>
 <div id="sites"></div>
 
 <script src="../js/spin.min.js"></script>

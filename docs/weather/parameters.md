@@ -5,7 +5,7 @@ List of Parameters
 
 The list of parameters is:
 
-<div id="spinner"></div>
+<div id="spinner" style="position: relative;"></div>
 <div id="parameters"></div>
 
 <script src="../js/spin.min.js"></script>

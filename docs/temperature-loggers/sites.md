@@ -5,7 +5,7 @@ List of Temperature Logger Sites
 
 The list of sites for *AIMS Temperature Loggers* is:
 
-<div id="spinner"></div>
+<div id="spinner" style="position: relative;"></div>
 <div id="sites"></div>
 
 <script src="../js/spin.min.js"></script>
