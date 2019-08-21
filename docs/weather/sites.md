@@ -20,6 +20,6 @@ $.get("https://api.aims.gov.au/data/v1.0/10.25845/5c09bf93f315d/sites")
 .done(function(data) {
     spinner.stop();
     populateSites(data);
-    });
+});
 
 </script>
