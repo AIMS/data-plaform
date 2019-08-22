@@ -16,7 +16,7 @@ paths:
       - name: "min-longitude"
         in: "query"
         required: false
-        type: "string"
+        type: "number"
       - name: "max-longitude"
         in: "query"
         required: false
