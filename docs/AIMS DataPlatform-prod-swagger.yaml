@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2019-08-20T05:20:22Z"
+  version: "2019-08-22T00:59:42Z"
   title: "AIMS DataPlatform"
 host: "api.aims.gov.au"
 basePath: "/data"
@@ -54,8 +54,28 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/ResponseWithCitation"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
       security:
       - api_key: []
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
   /v1.0/10.25845/5b4eb0f9bb848/sites:
     get:
       produces:
@@ -119,8 +139,28 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/WeatherResponseWithCitation"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
       security:
       - api_key: []
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
   /v1.0/10.25845/5c09bf93f315d/parameters:
     get:
       produces:
