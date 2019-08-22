@@ -33,7 +33,6 @@ Examples usage of data request using query filter parameters with R client:
     'series'=104939, 'size'=10))
 # or
 >getAllData('10.25845/5c09bf93f315d', filters=list(
-    'site-name'='Davies Reef',
-    'size'=10000))
+    'site-name'='Davies Reef'))
 
 ```
