@@ -25,9 +25,9 @@ Examples usage of data request using query filter parameters with R client:
 >library(aimsdataplatform)
 >getData('10.25845/5c09bf93f315d', filters=list(
     'site-name'='Davies Reef',
-    'parameter'='Wind Direction (Scalar Average 10 Minutes)',
-    'size'=10))
-# or
+    'parameter'='Wind Direction (Scalar Average 10 Minutes)'))
+
+# or setting a small page size perhaps for a web page...
 >getData('10.25845/5c09bf93f315d', filters=list(
     'site-name'='Square Rocks',
     'series'=104939, 'size'=10))
