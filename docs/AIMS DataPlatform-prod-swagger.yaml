@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2019-08-22T00:59:42Z"
+  version: "2019-08-22T01:10:33Z"
   title: "AIMS DataPlatform"
 host: "api.aims.gov.au"
 basePath: "/data"
@@ -16,14 +16,14 @@ paths:
       - name: "min-longitude"
         in: "query"
         required: false
-        type: "number"
+        type: "string"
       - name: "max-longitude"
         in: "query"
         required: false
         type: "string"
       - name: "X-Api-Key"
         in: "header"
-        required: true
+        required: false
         type: "string"
       - name: "site-name"
         in: "query"
@@ -100,7 +100,7 @@ paths:
         type: "string"
       - name: "X-Api-Key"
         in: "header"
-        required: true
+        required: false
         type: "string"
       - name: "series"
         in: "query"
@@ -142,8 +142,6 @@ paths:
           headers:
             Access-Control-Allow-Origin:
               type: "string"
-      security:
-      - api_key: []
     options:
       consumes:
       - "application/json"
@@ -161,6 +159,8 @@ paths:
               type: "string"
             Access-Control-Allow-Headers:
               type: "string"
+      security:
+      - api_key: []
   /v1.0/10.25845/5c09bf93f315d/parameters:
     get:
       produces:
