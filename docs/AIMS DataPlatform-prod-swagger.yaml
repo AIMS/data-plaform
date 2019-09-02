@@ -16,8 +16,7 @@ paths:
       - name: "min-longitude"
         in: "query"
         required: false
-        schema:
-          type: double
+        type: double
         description: "Test description with link"
       - name: "max-longitude"
         in: "query"
