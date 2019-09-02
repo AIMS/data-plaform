@@ -16,7 +16,7 @@ paths:
       - name: "min-longitude"
         in: "query"
         required: false
-        type: double
+        type: number
         description: "Test description with <a href=\"something\">link</a>"
       - name: "max-longitude"
         in: "query"
