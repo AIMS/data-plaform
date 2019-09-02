@@ -1,6 +1,6 @@
 [Home](../index)
 
-AIMS Weather Data Set
+AIMS Weather Dataset
 =====================
 
 Available query parameters for *AIMS Weather* data set are:

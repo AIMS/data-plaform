@@ -1,6 +1,6 @@
 [Home](../index)
 
-AIMS Temperature Loggers Data Set
+AIMS Temperature Loggers Dataset
 =================================
 
 Available query parameters for *AIMS Temperature Loggers* data set are:

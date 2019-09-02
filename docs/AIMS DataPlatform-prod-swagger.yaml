@@ -2,7 +2,7 @@
 swagger: "2.0"
 info:
   version: "2019-08-22T06:25:05Z"
-  title: "AIMS DataPlatform"
+  title: "AIMS Data Platform"
 host: "api.aims.gov.au"
 basePath: "/data"
 schemes:
@@ -16,7 +16,9 @@ paths:
       - name: "min-longitude"
         in: "query"
         required: false
-        type: "string"
+        schema:
+          type: double
+        description: "Test description with link"
       - name: "max-longitude"
         in: "query"
         required: false
