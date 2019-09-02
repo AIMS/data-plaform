@@ -10,6 +10,7 @@ schemes:
 paths:
   /v1.0/10.25845/5b4eb0f9bb848/data:
     get:
+      summary: "Click [here](http://somehere) for parameter values"
       produces:
       - "application/json"
       parameters:
@@ -17,7 +18,7 @@ paths:
         in: "query"
         required: false
         type: number
-        description: "Test description with [link](http://something)"
+        description: "Test description"
       - name: "max-longitude"
         in: "query"
         required: false
