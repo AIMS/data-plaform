@@ -3,22 +3,27 @@ info:
   title: "AIMS DataPlatform"
   version: "2019-08-22T06:25:05Z"
 servers:
-- url: "https://api.aims.gov.au/{basePath}"
-  variables:
-    basePath:
-      default: "/data"
+- url: "https://api.aims.gov.au/data"
 paths:
   /v1.0/10.25845/5c09bf93f315d/parameters:
     get:
+      summary: "list of available parameters"
+      description: "The list of available parameters such as Wind Speed, see examples [here](https://aims.github.io/data-platform/weather/parameters)"
+      tags:
+        - weather
       responses:
         200:
           description: "200 response"
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ListOfParamters"
+                $ref: "#/components/schemas/ListOfParameters"
   /v1.0/10.25845/5c09bf93f315d/series:
     get:
+      summary: "list of available data series"
+      description: "The list of available data series, see examples [here](https://aims.github.io/data-platform/weather/series)"
+      tags:
+        - weather
       responses:
         200:
           description: "200 response"
@@ -28,6 +33,10 @@ paths:
                 $ref: "#/components/schemas/ListOfSeries"
   /v1.0/10.25845/5b4eb0f9bb848/sites:
     get:
+      summary: "list of available sites"
+      description: "The list of available site names, see examples [here](https://aims.github.io/data-platform/temperature-loggers/sites)"
+      tags:
+        - temperature-loggers
       responses:
         200:
           description: "200 response"
@@ -35,39 +44,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ListOfSitesInResults"
-  /v1.0/key:
-    post:
-      responses:
-        200:
-          description: "200 response"
-          headers:
-            Access-Control-Allow-Origin:
-              schema:
-                type: "string"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Empty"
-    options:
-      responses:
-        200:
-          description: "200 response"
-          headers:
-            Access-Control-Allow-Origin:
-              schema:
-                type: "string"
-            Access-Control-Allow-Methods:
-              schema:
-                type: "string"
-            Access-Control-Allow-Headers:
-              schema:
-                type: "string"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Empty"
   /v1.0/10.25845/5c09bf93f315d/sites:
     get:
+      summary: "list of available sites"
+      description: "The list of available site names, see examples [here](https://aims.github.io/data-platform/weather/sites)"
+      tags:
+        - weather
       responses:
         200:
           description: "200 response"
@@ -77,46 +59,64 @@ paths:
                 $ref: "#/components/schemas/ListOfSites"
   /v1.0/10.25845/5b4eb0f9bb848/data:
     get:
+      summary: "get data with citation"
+      description: "Gets a page of data"
+      tags:
+        - temperature-loggers
       parameters:
       - name: "min-longitude"
         in: "query"
         schema:
           type: number
+          example: 145.0
+        description: "Minimum longitude for query"
       - name: "max-longitude"
         in: "query"
         schema:
           type: number
-      - name: "X-Api-Key"
+          example: 147.6
+        description: "Maximum longitude for query"
+      - name: "x-api-key"
         in: "header"
         schema:
           type: "string"
+          example: "my-api-key"
+        description: "Your [AIMS Data Platform API Key](https://aims.github.io/data-platform/key-request)"
       - name: "site-name"
         in: "query"
         schema:
           type: "string"
-        description: "Get the list of available site names [here](https://aims.github.io/temperature/sites)"
+          example: "Davies Reef"
+        description: "Get the list of available site names [here](https://aims.github.io/data-platform/temperature-loggers/sites)"
       - name: "thru-date"
         in: "query"
         schema:
           type: datetime
+          example: "2019-01-01T00:00:00"
         description: "Format YYYY-MM-DDThh:mm:ss"
       - name: "max-latitude"
         in: "query"
         schema:
-          type: datetime
-        description: "Format YYYY-MM-DDThh:mm:ss"
+          type: number
+          example: -15.0
+        description: "Latitude in signed degrees format"
       - name: "min-latitude"
         in: "query"
         schema:
           type: number
+          example: -18.0
+        description: "Latitude in signed degrees format"
       - name: "from-date"
         in: "query"
         schema:
-          type: "string"
+          type: datetime
+          example: "2019-01-07T00:00:00"
+        description: "Format YYYY-MM-DDThh:mm:ss"
       - name: "size"
         in: "query"
         schema:
-          type: "string"
+          type: integer
+        description: "The maximum number of rows per request"
       responses:
         200:
           description: "200 response"
@@ -131,6 +131,10 @@ paths:
       security:
       - api_key: []
     options:
+      summary: "get data with citation - cors support"
+      description: "Provides cors header for pre-flight checks"
+      tags:
+        - temperature-loggers
       responses:
         200:
           description: "200 response"
@@ -150,23 +154,31 @@ paths:
                 $ref: "#/components/schemas/Empty"
   /v1.0/10.25845/5c09bf93f315d/data:
     get:
+      summary: "get data with citation"
+      description: "Gets a page of data"
+      tags:
+        - weather
       parameters:
       - name: "min-longitude"
         in: "query"
         schema:
-          type: "string"
+          type: number
+        description: "Minimum longitude for query"
       - name: "max-longitude"
         in: "query"
         schema:
-          type: "string"
-      - name: "X-Api-Key"
+          type: number
+        description: "Maximum longitude for query"
+      - name: "x-api-key"
         in: "header"
         schema:
           type: "string"
+          example: "my-api-key"
+        description: "Your [AIMS Data Platform API Key](https://aims.github.io/data-platform/key-request)"
       - name: "series"
         in: "query"
         schema:
-          type: "string"
+          type: integer
       - name: "site-name"
         in: "query"
         schema:
@@ -174,15 +186,15 @@ paths:
       - name: "thru-date"
         in: "query"
         schema:
-          type: "string"
+          type: datetime
       - name: "max-latitude"
         in: "query"
         schema:
-          type: "string"
+          type: number
       - name: "min-latitude"
         in: "query"
         schema:
-          type: "string"
+          type: number
       - name: "parameter"
         in: "query"
         schema:
@@ -190,11 +202,11 @@ paths:
       - name: "from-date"
         in: "query"
         schema:
-          type: "string"
+          type: datetime
       - name: "size"
         in: "query"
         schema:
-          type: "string"
+          type: integer
       responses:
         200:
           description: "200 response"
@@ -209,6 +221,10 @@ paths:
       security:
       - api_key: []
     options:
+      summary: "get data with citation - cors support"
+      description: "Provides cors header for pre-flight checks"
+      tags:
+        - weather
       responses:
         200:
           description: "200 response"
@@ -307,7 +323,7 @@ components:
           series_name:
             type: "string"
             description: "Series name"
-    ListOfParamters:
+    ListOfParameters:
       title: "List of Parameters"
       type: "array"
       items:
