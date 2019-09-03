@@ -1,0 +1,376 @@
+openapi: "3.0.1"
+info:
+  title: "AIMS DataPlatform"
+  version: "2019-08-22T06:25:05Z"
+servers:
+- url: "https://api.aims.gov.au/{basePath}"
+  variables:
+    basePath:
+      default: "/data"
+paths:
+  /v1.0/10.25845/5c09bf93f315d/parameters:
+    get:
+      responses:
+        200:
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListOfParamters"
+  /v1.0/10.25845/5c09bf93f315d/series:
+    get:
+      responses:
+        200:
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListOfSeries"
+  /v1.0/10.25845/5b4eb0f9bb848/sites:
+    get:
+      responses:
+        200:
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListOfSitesInResults"
+  /v1.0/key:
+    post:
+      responses:
+        200:
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+    options:
+      responses:
+        200:
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+            Access-Control-Allow-Methods:
+              schema:
+                type: "string"
+            Access-Control-Allow-Headers:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+  /v1.0/10.25845/5c09bf93f315d/sites:
+    get:
+      responses:
+        200:
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListOfSites"
+  /v1.0/10.25845/5b4eb0f9bb848/data:
+    get:
+      parameters:
+      - name: "min-longitude"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "max-longitude"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "X-Api-Key"
+        in: "header"
+        schema:
+          type: "string"
+      - name: "site-name"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "thru-date"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "max-latitude"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "min-latitude"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "from-date"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "size"
+        in: "query"
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseWithCitation"
+      security:
+      - api_key: []
+    options:
+      responses:
+        200:
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+            Access-Control-Allow-Methods:
+              schema:
+                type: "string"
+            Access-Control-Allow-Headers:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+  /v1.0/10.25845/5c09bf93f315d/data:
+    get:
+      parameters:
+      - name: "min-longitude"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "max-longitude"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "X-Api-Key"
+        in: "header"
+        schema:
+          type: "string"
+      - name: "series"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "site-name"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "thru-date"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "max-latitude"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "min-latitude"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "parameter"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "from-date"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "size"
+        in: "query"
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WeatherResponseWithCitation"
+      security:
+      - api_key: []
+    options:
+      responses:
+        200:
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+            Access-Control-Allow-Methods:
+              schema:
+                type: "string"
+            Access-Control-Allow-Headers:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+components:
+  schemas:
+    WeatherResponseWithCitation:
+      title: "Response with Citation"
+      type: "object"
+      properties:
+        citation:
+          type: "string"
+          description: "Academic citation for the data"
+        metadata:
+          type: "string"
+          description: "Metadata such as URL"
+        links:
+          type: "array"
+          description: "Links associated with data set"
+          items:
+            type: "string"
+            description: "Link associated with data set"
+        results:
+          type: "array"
+          description: "The returned data"
+          items:
+            type: "object"
+            properties:
+              deployment_id:
+                type: "number"
+                description: "Deployment ID"
+              site_name:
+                type: "string"
+                description: "The Site where measurement was taken"
+              location_name:
+                type: "string"
+                description: "The location ID where measurement was taken"
+              depth:
+                type: "number"
+                description: "The depth as which measurement was taken"
+              latitude:
+                type: "number"
+                description: "Latitude of measurement"
+              longitude:
+                type: "number"
+                description: "Longitude of measurement"
+              parameter:
+                type: "string"
+                description: "Measurement Type"
+              serial_num:
+                type: "string"
+                description: "Serial number"
+              data_id:
+                type: "number"
+                description: "Data ID"
+              time:
+                type: "string"
+                description: "Time of measurement"
+              raw_value:
+                type: "number"
+                description: "Measured value"
+              qc_value:
+                type: "number"
+                description: "Measured value"
+              series_id:
+                type: "number"
+                description: "Series ID"
+              series_name:
+                type: "string"
+                description: "The name of series"
+    Empty:
+      title: "Empty Schema"
+      type: "object"
+    ListOfSeries:
+      title: "List of Series"
+      type: "array"
+      items:
+        type: "object"
+        properties:
+          series_id:
+            type: "number"
+            description: "Series ID"
+          series_name:
+            type: "string"
+            description: "Series name"
+    ListOfParamters:
+      title: "List of Parameters"
+      type: "array"
+      items:
+        type: "string"
+        description: "The parameter name"
+    ListOfSitesInResults:
+      title: "List of Sites"
+      type: "object"
+      properties:
+        results:
+          type: "array"
+          description: "The returned list of sites"
+          items:
+            type: "string"
+            description: "The site name"
+    ResponseWithCitation:
+      title: "Response with Citation"
+      type: "object"
+      properties:
+        citation:
+          type: "string"
+          description: "Academic citation for the data"
+        metadata:
+          type: "string"
+          description: "Metadata such as URL"
+        results:
+          type: "array"
+          description: "The returned data"
+          items:
+            type: "object"
+            properties:
+              site_name:
+                type: "string"
+                description: "The Site where measurement was taken"
+              location_name:
+                type: "string"
+                description: "The location ID where measurement was taken"
+              depth:
+                type: "number"
+                description: "The depth as which measurement was taken"
+              latitude:
+                type: "number"
+                description: "Latitude of measurement"
+              longitude:
+                type: "number"
+                description: "Longitude of measurement"
+              time:
+                type: "string"
+                description: "Time of measurement"
+              serial_num:
+                type: "number"
+                description: "Serial number"
+              parameter:
+                type: "string"
+                description: "Measurement Type"
+              value:
+                type: "number"
+                description: "Measured value"
+    ListOfSites:
+      title: "List of Sites"
+      type: "array"
+      items:
+        type: "string"
+        description: "The site name"
+  securitySchemes:
+    api_key:
+      type: "apiKey"
+      name: "x-api-key"
+      in: "header"
