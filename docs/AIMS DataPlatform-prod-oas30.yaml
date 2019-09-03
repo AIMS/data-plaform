@@ -81,11 +81,11 @@ paths:
       - name: "min-longitude"
         in: "query"
         schema:
-          type: "string"
+          type: number
       - name: "max-longitude"
         in: "query"
         schema:
-          type: "string"
+          type: number
       - name: "X-Api-Key"
         in: "header"
         schema:
@@ -94,18 +94,21 @@ paths:
         in: "query"
         schema:
           type: "string"
+        description: "Get the list of available site names [here](https://aims.github.io/temperature/sites)"
       - name: "thru-date"
         in: "query"
         schema:
-          type: "string"
+          type: datetime
+        description: "Format YYYY-MM-DDThh:mm:ss"
       - name: "max-latitude"
         in: "query"
         schema:
-          type: "string"
+          type: datetime
+        description: "Format YYYY-MM-DDThh:mm:ss"
       - name: "min-latitude"
         in: "query"
         schema:
-          type: "string"
+          type: number
       - name: "from-date"
         in: "query"
         schema:
