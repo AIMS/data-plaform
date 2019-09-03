@@ -1,9 +1,13 @@
 openapi: "3.0.1"
 info:
-  title: "AIMS DataPlatform"
-  version: "2019-08-22T06:25:05Z"
+  title: "AIMS Data Platform REST API"
+  version: "1.0"
+  contact:
+    name: "AIMS Datacentre"
+    email: "adc@aims.gov.au"
+    url: "https://www.aims.gov.au"
 servers:
-- url: "https://api.aims.gov.au/data"
+  - url: "https://api.aims.gov.au/data"
 paths:
   /v1.0/10.25845/5c09bf93f315d/parameters:
     get:
@@ -64,18 +68,6 @@ paths:
       tags:
         - temperature-loggers
       parameters:
-      - name: "min-longitude"
-        in: "query"
-        schema:
-          type: number
-          example: 145.0
-        description: "Minimum longitude for query"
-      - name: "max-longitude"
-        in: "query"
-        schema:
-          type: number
-          example: 147.6
-        description: "Maximum longitude for query"
       - name: "x-api-key"
         in: "header"
         schema:
@@ -87,31 +79,43 @@ paths:
         schema:
           type: "string"
           example: "Davies Reef"
-        description: "Get the list of available site names [here](https://aims.github.io/data-platform/temperature-loggers/sites)"
-      - name: "thru-date"
-        in: "query"
-        schema:
-          type: datetime
-          example: "2019-01-01T00:00:00"
-        description: "Format YYYY-MM-DDThh:mm:ss"
-      - name: "max-latitude"
-        in: "query"
-        schema:
-          type: number
-          example: -15.0
-        description: "Latitude in signed degrees format"
-      - name: "min-latitude"
-        in: "query"
-        schema:
-          type: number
-          example: -18.0
-        description: "Latitude in signed degrees format"
+        description: "A site name, can be found [here](https://aims.github.io/data-platform/temperature-loggers/sites)"
       - name: "from-date"
         in: "query"
         schema:
           type: datetime
           example: "2019-01-07T00:00:00"
         description: "Format YYYY-MM-DDThh:mm:ss"
+      - name: "thru-date"
+        in: "query"
+        schema:
+          type: datetime
+          example: "2019-01-01T00:00:00"
+        description: "Format YYYY-MM-DDThh:mm:ss"
+      - name: "min-latitude"
+        in: "query"
+        schema:
+          type: number
+          example: -18.0
+        description: "Minimum latitude in signed degrees format"
+      - name: "max-latitude"
+        in: "query"
+        schema:
+          type: number
+          example: -15.0
+        description: "Maximim latitude in signed degrees format"
+      - name: "min-longitude"
+        in: "query"
+        schema:
+          type: number
+          example: 145.0
+        description: "Minimum longitude in signed degrees format"
+      - name: "max-longitude"
+        in: "query"
+        schema:
+          type: number
+          example: 147.6
+        description: "Maximum longitude in signed degrees format"
       - name: "size"
         in: "query"
         schema:
@@ -159,50 +163,66 @@ paths:
       tags:
         - weather
       parameters:
-      - name: "min-longitude"
-        in: "query"
-        schema:
-          type: number
-        description: "Minimum longitude for query"
-      - name: "max-longitude"
-        in: "query"
-        schema:
-          type: number
-        description: "Maximum longitude for query"
       - name: "x-api-key"
         in: "header"
         schema:
           type: "string"
           example: "my-api-key"
         description: "Your [AIMS Data Platform API Key](https://aims.github.io/data-platform/key-request)"
-      - name: "series"
-        in: "query"
-        schema:
-          type: integer
       - name: "site-name"
         in: "query"
         schema:
           type: "string"
-      - name: "thru-date"
+          example: "Davies Reef"
+        description: "A site name, can be found [here](https://aims.github.io/data-platform/weather/sites)"
+      - name: "series"
         in: "query"
         schema:
-          type: datetime
-      - name: "max-latitude"
-        in: "query"
-        schema:
-          type: number
-      - name: "min-latitude"
-        in: "query"
-        schema:
-          type: number
+          type: integer
+          example: 189
+        description: "A series ID, can be found [here](https://aims.github.io/data-platform/weather/series)"
       - name: "parameter"
         in: "query"
         schema:
           type: "string"
+          example: "Wind Speed"
+        description: "Measured weather parameter name, the available list can be seen [here](https://aims.github.io/data-platform/weather/parameters)"
       - name: "from-date"
         in: "query"
         schema:
           type: datetime
+          example: "2019-01-01T00:00:00"
+        description: "Format YYYY-MM-DDThh:mm:ss"
+      - name: "thru-date"
+        in: "query"
+        schema:
+          type: datetime
+          example: "2019-01-07T00:00:00"
+        description: "Format YYYY-MM-DDThh:mm:ss"
+      - name: "min-latitude"
+        in: "query"
+        schema:
+          type: number
+          example: -18.0
+        description: "Minumum latitude in signed degrees format"
+      - name: "max-latitude"
+        in: "query"
+        schema:
+          type: number
+          example: -15.0
+        description: "Maximum latitude in signed degrees format"
+      - name: "min-longitude"
+        in: "query"
+        schema:
+          type: number
+          example: 145.0
+        description: "Longitude in signed degrees format"
+      - name: "max-longitude"
+        in: "query"
+        schema:
+          type: number
+          example: 147.6
+        description: "Longitude in signed degrees format"
       - name: "size"
         in: "query"
         schema:
