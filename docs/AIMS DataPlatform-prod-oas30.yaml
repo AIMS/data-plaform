@@ -6,6 +6,9 @@ info:
     name: "AIMS Datacentre"
     email: "adc@aims.gov.au"
     url: "https://www.aims.gov.au"
+  license:
+    name: "CC BY 3.0"
+    url: "https://creativecommons.org/licenses/by/3.0/au/legalcode"
 servers:
   - url: "https://api.aims.gov.au/data"
 paths:
@@ -25,7 +28,7 @@ paths:
   /v1.0/10.25845/5c09bf93f315d/series:
     get:
       summary: "list of available data series"
-      description: "The list of available data series, see examples [here](https://aims.github.io/data-platform/weather/series)"
+      description: "The list of available data series, see examples [here](https://aims.github.io/data-platform/weather/series).  A data series is a time series dataset on the same parameter at the same location."
       tags:
         - weather
       responses:
@@ -64,7 +67,7 @@ paths:
   /v1.0/10.25845/5b4eb0f9bb848/data:
     get:
       summary: "get data with citation"
-      description: "Gets a page of data"
+      description: "Gets a page of data, with a default 1000 rows"
       tags:
         - temperature-loggers
       parameters:
@@ -180,7 +183,7 @@ paths:
         schema:
           type: integer
           example: 189
-        description: "A series ID, can be found [here](https://aims.github.io/data-platform/weather/series)"
+        description: "A series ID, can be found [here](https://aims.github.io/data-platform/weather/series). A data series is a time series dataset on the same parameter at the same location."
       - name: "parameter"
         in: "query"
         schema:
@@ -276,10 +279,10 @@ components:
           description: "Metadata such as URL"
         links:
           type: "array"
-          description: "Links associated with data set"
+          description: "Links associated with dataset"
           items:
             type: "string"
-            description: "Link associated with data set"
+            description: "Link associated with dataset"
         results:
           type: "array"
           description: "The returned data"

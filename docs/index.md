@@ -26,7 +26,7 @@ curl -H "x-api-key: xxxxx" "https://api.aims.gov.au/data/v1.0/10.25845/5c09bf93f
 REST API Documentation
 ----------------------
 
-Detailed information about the __AIMS Data Platform API__ urls and formats can be found in the Swagger documentation available [here](swagger).
+Detailed information about the __AIMS Data Platform API__ urls and formats can be found in the [Swagger documentation](swagger).
                                                                                  
 Available Clients
 -----------------
