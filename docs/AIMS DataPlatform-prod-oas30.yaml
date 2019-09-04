@@ -123,6 +123,7 @@ paths:
         in: "query"
         schema:
           type: integer
+          example: 1000
         description: "The maximum number of rows per request"
       responses:
         200:
@@ -230,6 +231,8 @@ paths:
         in: "query"
         schema:
           type: integer
+          example: 1000
+        description: "The maximum number of rows per request"
       responses:
         200:
           description: "200 response"
