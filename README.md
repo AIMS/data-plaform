@@ -1,4 +1,4 @@
-AIMS DataPlatform API
+AIMS Data Platform API
 =====================
 
-This project contains documentation for the [AIMS DataPlatform API](https://aims.github.io/data-platform).
+This project contains documentation for the [AIMS Data Platform API](https://aims.github.io/data-platform).
