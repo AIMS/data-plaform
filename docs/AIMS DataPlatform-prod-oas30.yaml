@@ -87,13 +87,13 @@ paths:
         in: "query"
         schema:
           type: datetime
-          example: "2019-01-07T00:00:00"
+          example: "2000-01-01"
         description: "Format YYYY-MM-DDThh:mm:ss"
       - name: "thru-date"
         in: "query"
         schema:
           type: datetime
-          example: "2019-01-01T00:00:00"
+          example: "2000-01-07"
         description: "Format YYYY-MM-DDThh:mm:ss"
       - name: "min-latitude"
         in: "query"
@@ -183,49 +183,49 @@ paths:
         in: "query"
         schema:
           type: integer
-          example: 189
+          example: 73
         description: "A series ID, can be found [here](https://aims.github.io/data-platform/weather/series). A data series is a time series dataset on the same parameter at the same location."
       - name: "parameter"
         in: "query"
         schema:
           type: "string"
-          example: "Wind Speed"
+          example: "Wind Speed (Scalar avg 10 min)"
         description: "Measured weather parameter name, the available list can be seen [here](https://aims.github.io/data-platform/weather/parameters)"
       - name: "from-date"
         in: "query"
         schema:
           type: datetime
-          example: "2019-01-01T00:00:00"
+          example: "2018-01-01"
         description: "Format YYYY-MM-DDThh:mm:ss"
       - name: "thru-date"
         in: "query"
         schema:
           type: datetime
-          example: "2019-01-07T00:00:00"
+          example: "2018-01-07"
         description: "Format YYYY-MM-DDThh:mm:ss"
       - name: "min-latitude"
         in: "query"
         schema:
           type: number
-          example: -18.0
+          example: -20.0
         description: "Minumum latitude in signed degrees format"
       - name: "max-latitude"
         in: "query"
         schema:
           type: number
-          example: -15.0
+          example: -18.0
         description: "Maximum latitude in signed degrees format"
       - name: "min-longitude"
         in: "query"
         schema:
           type: number
-          example: 145.0
+          example: 140.0
         description: "Longitude in signed degrees format"
       - name: "max-longitude"
         in: "query"
         schema:
           type: number
-          example: 147.6
+          example: 150.0
         description: "Longitude in signed degrees format"
       - name: "size"
         in: "query"
