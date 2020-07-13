@@ -35,5 +35,5 @@ At this time there is only one client specifically made for __AIMS Data Platform
 
 Platform | Client
 ---------|--------------------------------------------------------------------
-R        | [AIMS Data Platform R Client](http://aims.github.io/data-platform-r)
+R        | [AIMS Data Platform R Client](http://aims.github.io/dataaimsr)
 
