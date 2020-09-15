@@ -15,7 +15,7 @@ paths:
   /v1.0/10.25845/5c09bf93f315d/parameters:
     get:
       summary: "list of available parameters"
-      description: "The list of available parameters such as Wind Speed, see examples [here](https://aims.github.io/data-platform/weather/parameters)"
+      description: "The list of available parameters such as Wind Speed, see examples [here](https://open-aims.github.io/data-platform/weather/parameters)"
       tags:
         - weather
       responses:
@@ -28,7 +28,7 @@ paths:
   /v1.0/10.25845/5c09bf93f315d/series:
     get:
       summary: "list of available data series"
-      description: "The list of available data series, see examples [here](https://aims.github.io/data-platform/weather/series).  A data series is a time series dataset on the same parameter at the same location."
+      description: "The list of available data series, see examples [here](https://open-aims.github.io/data-platform/weather/series).  A data series is a time series dataset on the same parameter at the same location."
       tags:
         - weather
       responses:
@@ -41,7 +41,7 @@ paths:
   /v1.0/10.25845/5b4eb0f9bb848/sites:
     get:
       summary: "list of available sites"
-      description: "The list of available site names, see examples [here](https://aims.github.io/data-platform/temperature-loggers/sites)"
+      description: "The list of available site names, see examples [here](https://open-aims.github.io/data-platform/temperature-loggers/sites)"
       tags:
         - temperature-loggers
       responses:
@@ -54,7 +54,7 @@ paths:
   /v1.0/10.25845/5c09bf93f315d/sites:
     get:
       summary: "list of available sites"
-      description: "The list of available site names, see examples [here](https://aims.github.io/data-platform/weather/sites)"
+      description: "The list of available site names, see examples [here](https://open-aims.github.io/data-platform/weather/sites)"
       tags:
         - weather
       responses:
@@ -76,13 +76,13 @@ paths:
         schema:
           type: "string"
           example: "my-api-key"
-        description: "Your [AIMS Data Platform API Key](https://aims.github.io/data-platform/key-request)"
+        description: "Your [AIMS Data Platform API Key](https://open-aims.github.io/data-platform/key-request)"
       - name: "site-name"
         in: "query"
         schema:
           type: "string"
           example: "Davies Reef"
-        description: "A site name, can be found [here](https://aims.github.io/data-platform/temperature-loggers/sites)"
+        description: "A site name, can be found [here](https://open-aims.github.io/data-platform/temperature-loggers/sites)"
       - name: "from-date"
         in: "query"
         schema:
@@ -172,25 +172,25 @@ paths:
         schema:
           type: "string"
           example: "my-api-key"
-        description: "Your [AIMS Data Platform API Key](https://aims.github.io/data-platform/key-request)"
+        description: "Your [AIMS Data Platform API Key](https://open-aims.github.io/data-platform/key-request)"
       - name: "site-name"
         in: "query"
         schema:
           type: "string"
           example: "Davies Reef"
-        description: "A site name, can be found [here](https://aims.github.io/data-platform/weather/sites)"
+        description: "A site name, can be found [here](https://open-aims.github.io/data-platform/weather/sites)"
       - name: "series"
         in: "query"
         schema:
           type: integer
           example: 73
-        description: "A series ID, can be found [here](https://aims.github.io/data-platform/weather/series). A data series is a time series dataset on the same parameter at the same location."
+        description: "A series ID, can be found [here](https://open-aims.github.io/data-platform/weather/series). A data series is a time series dataset on the same parameter at the same location."
       - name: "parameter"
         in: "query"
         schema:
           type: "string"
           example: "Wind Speed (Scalar avg 10 min)"
-        description: "Measured weather parameter name, the available list can be seen [here](https://aims.github.io/data-platform/weather/parameters)"
+        description: "Measured weather parameter name, the available list can be seen [here](https://open-aims.github.io/data-platform/weather/parameters)"
       - name: "from-date"
         in: "query"
         schema:
