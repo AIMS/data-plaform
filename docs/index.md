@@ -26,8 +26,14 @@ curl -H "x-api-key: xxxxx" "https://api.aims.gov.au/data/v1.0/10.25845/5c09bf93f
 REST API Documentation
 ----------------------
 
-Detailed information about the __AIMS Data Platform API__ urls and formats can be found in the [Swagger documentation](swagger).
-                                                                                 
+Detailed information about the __AIMS Data Platform API__ urls and formats can be found in the Swagger documentation for
+the appropriate project.
+
+Dataset                 | Documentation
+------------------------|-------------------------------------------------------------------------------------------------------------------------------
+Weather                 | [https://api.aims.gov.au/data-v2.0/10.25845/5c09bf93f315d/docs](https://api.aims.gov.au/data-v2.0/10.25845/5c09bf93f315d/docs)
+Temperature Loggers     | [https://api.aims.gov.au/data-v2.0/10.25845/5b4eb0f9bb848/docs](https://api.aims.gov.au/data-v2.0/10.25845/5b4eb0f9bb848/docs)
+
 Available Clients
 -----------------
 
