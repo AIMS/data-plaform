@@ -1,7 +1,7 @@
 AIMS Data Platform API
 =====================
 
-The Austrlian Institute of Marine Science (AIMS) provides the __AIMS Data Platform API__ for access to AIMS data.
+The Australian Institute of Marine Science (AIMS) provides the __AIMS Data Platform API__ for access to AIMS data.
 
 Available Data Sets
 -------------------
